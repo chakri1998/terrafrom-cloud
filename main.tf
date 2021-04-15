@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 resource "null_resource" "cluster" {
-provisioner "remote-exec" {
+provisioner "local-exec" {
   command = "echo helloworld"
   }
   }
