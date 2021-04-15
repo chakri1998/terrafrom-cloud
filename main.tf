@@ -13,7 +13,10 @@ provider "aws" {
 }
 
 resource "null_resource" "cluster" {
-  provisioner "local-exec" {
-    formatlist("Hello, %s!", var.names)
-    }
+   name = formatlist("Hello, %s!", var.names)
+  }
+
+output "name"{
+  value="null_resource.cluster.name"
+ 
   }
