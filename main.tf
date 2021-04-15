@@ -13,10 +13,12 @@ provider "aws" {
 }
 
 resource "null_resource" "cluster" {
-   name = formatlist("Hello, %s!", var.names)
+provisioner "remote-exec" {
+  command = echo "helloworld"
+  }
   }
 
-output "name"{
-  value="null_resource.cluster.name"
+# output "name"{
+#   value="null_resource.cluster.name"
  
-  }
+#   }
